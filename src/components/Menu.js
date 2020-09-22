@@ -13,7 +13,7 @@ function Menu(props) {
                 title={item.name}
                 subtitle={item.description}
                 hideChevron={true}
-                leftAvatar={{ source: require() }}
+                leftAvatar={{ source: require('../images/uthappizza.png') }}
             />
         )
     }
@@ -22,8 +22,10 @@ function Menu(props) {
         <FlatList
             data={props.dishes}
             renderItem={renderMenuItem}
-            keyExtractor={item => item.id.toSting()}
+            keyExtractor={item => item.id}
 
         />
     )
 }
+
+export default Menu
