@@ -3,8 +3,7 @@ import { View, Text } from 'react-native';
 import { Card } from 'react-native-elements';
 
 function RenderDish(props) {
-    const  dish  = props.dish
-
+    const dish = props.dish
     if (dish != null) {
         return (
             <Card
@@ -14,17 +13,16 @@ function RenderDish(props) {
                 <Text style={{ margin: 10 }}>
                     {dish.description}
                 </Text>
-
             </Card>
 
         )
     } else {
-        return(
+        return (
             <View>
-          <Text>  No Detail</Text>
-        </View>
+
+            </View>
         )
-       
+
     }
 
 }
@@ -32,8 +30,10 @@ function RenderDish(props) {
 
 
 function DishDetail(props) {
+    const { item } = props.route.params
+    console.log(item, 'dishaa')
     return (
-        <RenderDish dish={props.dish} />
+        <RenderDish dish={item} />
     )
 }
 
