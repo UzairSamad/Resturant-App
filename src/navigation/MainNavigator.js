@@ -19,13 +19,7 @@ export default function MainNavigator() {
     const Stack = createStackNavigator();
     const Drawer = createDrawerNavigator()
 
-
-
-
-
-
-
-    const StackScreens = (props) => {
+        const StackScreens = (props) => {
         return (
             <Stack.Navigator initialRouteName="Home">
                 <Stack.Screen name="Home" component={Home} options={{
