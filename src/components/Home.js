@@ -5,7 +5,16 @@ import { DISHES } from '../shared/dishes';
 import { PROMOTIONS } from '../shared/promotion';
 import { LEADERS } from '../shared/leaders';
 import { Icon } from 'react-native-elements'
+import { connect } from 'react-redux'
+import { baseUrl } from '../shared/baseurl'
 
+const mapStateToPorps = state => {
+    return {
+        dishes: state.dishes,
+        promotions: state.promotions,
+        leaders: state.leaders
+    }
+}
 
 function RenderItem(props) {
     const item = props.item;
@@ -62,4 +71,4 @@ class Home extends Component {
     }
 }
 
-export default Home
+export default connect(mapStateToPorps)(Home)

@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView, FlatList } from 'react-native';
 import { Card, Icon } from 'react-native-elements';
 import { COMMENTS } from '../shared/comments'
+import { connect } from 'react-redux'
+import { baseUrl } from '../shared/baseurl'
+
+const mapStateToPorps = state => {
+    return {
+        dishes: state.dishes
+    }
+}
 
 
 function RenderDish(props) {
@@ -86,4 +94,4 @@ function DishDetail(props) {
 }
 
 
-export default DishDetail
+export default connect(mapStateToPorps)(DishDetail)

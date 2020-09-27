@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
-import { Text, View ,ScrollView} from 'react-native'
+import { Text, View, ScrollView } from 'react-native'
 import { Card } from 'react-native-elements';
 import { LEADERS } from '../shared/leaders'
 import { ListItem, Avatar } from 'react-native-elements'
+import { connect } from 'react-redux'
+import { baseUrl } from '../shared/baseurl'
+
+const mapStateToPorps = state => {
+    return {
+        leaders: state.leaders
+    }
+}
 
 
 
@@ -27,7 +35,7 @@ function About(props) {
 
                 <ScrollView>
                     {
-                        LEADERS.map((val,i) => {
+                        LEADERS.map((val, i) => {
                             return (
                                 <ListItem key={val.id} bottomDivider>
                                     <Avatar source={require('../images/logo.png')} />
@@ -45,4 +53,4 @@ function About(props) {
     )
 }
 
-export default About
+export default connect(mapStateToPorps)(About)
