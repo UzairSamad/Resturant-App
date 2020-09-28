@@ -44,6 +44,7 @@ function Menu(props) {
             data={props.dishes}
             renderItem={renderMenuItem}
             keyExtractor={item => item.id}
+            // ListHeaderComponent={}
 
         />
     )
